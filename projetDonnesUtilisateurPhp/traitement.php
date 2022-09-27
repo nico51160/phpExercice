@@ -9,11 +9,12 @@
     <title>Document</title>
 </head>
 <body>
+<section>
 
 <?php // si le formulaire est valider // DEBUT
 if(isset($_POST['valider'])) {
 ?>
-    <section>
+   
         <form action="index.php" method="post">
         <h2>traitement de votre commande</h2>
         <button name="valider">
@@ -25,7 +26,7 @@ if(isset($_POST['valider'])) {
 <?php // on verifie la presence du nom // DEBUT
 if(empty($_POST['nom'])) {
     echo '<p class="pointille red">merci de rentrer votre nom</p>';
-} else {// on verifie la presence du nom // SUITE
+} else { // on verifie la presence du nom // SUITE
 ?>
 
 <div class="pizza">
@@ -48,15 +49,9 @@ Commande passé par <?= $_POST['nom']; ?>
 </form>
 
 <?php
-} // si le formulaire est valider // FIN
+} // si le formulaire est validé // FIN
 ?>
 
-
-
-
-
-
-       
-    </section>
+</section>
 </body>
 </html>
