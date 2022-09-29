@@ -18,18 +18,18 @@ require('_config.php');
 
                 <div class="champ">
                    <i class="fas fa-user"></i>
-                   <input type="text" name="nom" placeholder="votre nom">
+                   <input type="text" name="nom" placeholder="votre nom" value="<?php if(!empty($_POST['nom'])) {echo $_POST['nom'];} ?>">
                 </div>
 
             <p>Nos pizzas</p>
             <div class="pizza">
                 <div>
                    <input type="checkbox" name="pizzas[]" value="reine" id="pizza1">
-                   <label for="pizza1">Reine <span><?=PRIX_REINE;?>&euro;</span></label>
+                   <label for="pizza1"><strong>Reine</strong><span><?=PRIX_REINE;?>&euro;</span></label>
                 </div>
                 <div>
-                   <label for="pizza2">Calzone <span><?=PRIX_CALZONE;?>&euro;</span></label>
                    <input type="checkbox" name="pizzas[]" value="calzone" id="pizza2">
+                   <label for="pizza2"><strong>Calzone</strong><span><?=PRIX_CALZONE;?>&euro;</span></label>
                 </div>
             </div>
 
@@ -37,11 +37,11 @@ require('_config.php');
             <div class="pizza">
                 <div>
                    <input type="checkbox" name="pizzas[]" value="reine" id="pizza3">
-                   <label for="pizza3">Royal  <span><?=PRIX_ROYALE;?>&euro;</span></label>
+                   <label for="pizza3"><strong> Royal</strong><span><?=PRIX_ROYALE;?>&euro;</span></label>
                 </div>
                 <div>
-                   <label for="pizza4">Orientalle  <span><?=PRIX_ORIENTAL;?>&euro;</span></label>
                    <input type="checkbox" name="pizzas[]" value="calzone" id="pizza4">
+                   <label for="pizza4"><strong>Orientalle </strong><span><?=PRIX_ORIENTAL;?>&euro;</span></label>
                 </div>
             </div>
 

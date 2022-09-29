@@ -20,6 +20,7 @@ if(isset($_POST['valider'])) {
         <button name="valider">
         <i class="fas fa-backward"></i>
         </button>
+        <input type="hidden" name="nom" value="<?= $_POST['nom']; ?>">
         </form>
        
 
@@ -27,6 +28,12 @@ if(isset($_POST['valider'])) {
 if(empty($_POST['nom'])) {
     echo '<p class="pointille red">merci de rentrer votre nom</p>';
 } else { // on verifie la presence du nom // SUITE
+?>
+
+<?php  //on verifie si une pizza a été choisie // DEBUT
+if(empty($_POST['pizzas'])) {
+    echo '<p class="pointille red">merci de choisir au moins une pizza</p>';
+} else {  
 ?>
 
 <div class="pizza">
