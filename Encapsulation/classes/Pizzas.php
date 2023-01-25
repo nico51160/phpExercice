@@ -20,10 +20,10 @@ class Pizza {
     }
 
     public function setQuantite($quantitePizza) {
-        if(!is_int($quantitePizza)) {
+        if(!is_numeric($quantitePizza)) {
             echo 'Quantité incorrecte';
         } else {
-            $this->quantite = ABS($quantitePizza);
+            $this->quantite = ceil(ABS($quantitePizza));
         }
     }
 

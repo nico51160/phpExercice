@@ -30,7 +30,7 @@ include('classes/Pizzas.php');
         $royale->setPrix(15);
 
         // coté client
-        $calzone->setQuantite(3);
+        //$calzone->setQuantite(3);
        // echo $calzone->Calcul();
        
     ?>
@@ -54,6 +54,12 @@ if(isset($_POST['commander'])) {
 
     $$pizza->setQuantite($quantite);
     $calcul = $$pizza->Calcul();
+
+    if(is_numeric($quantite)) {
+        echo 'Le montant de votre commande sera de '.$calcul.' euros (emballage compris)';
+    }
+
+
 
 
 
