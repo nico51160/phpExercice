@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+
+}
+table {
+    width: 650px;
+    margin: auto;
+    border-collapse: collapse;
+
+}
+th {
+    background-color: #2980b9;
+    padding: 12px;
+    color: #fff;
+    border: 1px solid #2980b9;
+}
+td {
+    border: 1px solid #2980b9;
+    text-align: center;
+    padding: 12px;
+}
+caption {
+    color: #2980b9;
+    padding-bottom: 4px;
+}
+
+@media screen and (max-width: 650px) {
+    body {
+        font-size: 12px
+    }
+    table {
+        width: 80%;
+    }
+    .cacher {
+        display: none;
+    }
+
+}

@@ -14,13 +14,13 @@ class Tableau {
     public function setCaption($legende) {
         $this->caption = $legende;
     }
-    public function setEntete($data, $class, $rowspan, $colspan) {
+    public function setEntete($data, $class='', $rowspan='', $colspan='') {
         $this->data    = $data;
         $this->class   = $class;
         $this->rowspan = $rowspan;
         $this->colspan = $colspan;
     }
-    public function setDonnees($data, $class, $rowspan, $colspan) {
+    public function setDonnees($data, $class='', $rowspan='', $colspan='') {
         $this->data    = $data;
         $this->class   = $class;
         $this->rowspan = $rowspan;
@@ -29,14 +29,17 @@ class Tableau {
     
     public function getCaption() {
         $caption = '<caption>'.$this->caption.'</caption>';
+        return $caption;
     }
     public function getEntete() {
-        $entete = '<th class="'.$this->class'" colspan="'.$this->colspan'" rowspan="'.$this->rowspan'">'.$this->data.'</th>';
+        $entete = '<th class="'.$this->class.'" colspan="'.$this->colspan.'"
+         rowspan="'.$this->rowspan.'">'.$this->data.'</th>';
         return $entete;
     }
     public function getDonnees() {
-        $entete = '<td class="'.$this->class'" colspan="'.$this->colspan'" rowspan="'.$this->rowspan'">'.$this->data.'</td>';
-        return $entete;
-    }</var>
+        $donnees = '<td class="'.$this->class.'" colspan="'.$this->colspan.'" 
+        rowspan="'.$this->rowspan.'">'.$this->data.'</td>';
+        return $donnees;
+    }
 
 }
