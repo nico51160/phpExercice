@@ -9,6 +9,15 @@ class clientManager {
 
     public function CreateClient(client $client) {
         //Insert un nouvel objet client
+        $sql = 'INSERT INTO client
+                (nom, prenom, age) VALUES
+                (:nom, :prenom, :age)';
+        $req = $this->cnx->prepare($sql);
+        $req->execute(array(
+            ':nom'    => $client->getNom(),
+            ':prenom' => $client->getPrenom(),
+            ':age'    => $client->getAge()
+        ));
     }
 
     public function ReadClient($id) {
@@ -48,10 +57,27 @@ class clientManager {
 
     public function UpdateClient(client $client) {
         //Modifie un objet client
+        $sql = 'UPDATE client SET 
+                nom = :nom, prenom = :prenom, age = :age
+                where clientID = :clientID';
+        $req = $this->cnx->prepare($sql);
+        $req->execute(array(
+            ':clientID'=> $client->getClientID(),
+            ':nom'     => $client->getNom(),
+            ':prenom'  => $client->getPrenom(),
+            ':age'     => $client->getAge()
+        ));
+
     }
 
-    public function DeleteClient(client $client) {
+    public function deleteClient(client $client) {
         //Supprime un objet Client
+        $sql = 'DELETE FROM client
+        WHERE clientID = :clientID';
+        $req = $this->cnx->prepare($sql);
+        $req->execute(array(
+            ':clientID'=> $client->getClientID(),
+        ));
     }
 
     private function setCnx($cnx) {

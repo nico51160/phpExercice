@@ -18,28 +18,89 @@ spl_autoload_register(function($class) {
 </head>
 <body>
     <?php
-        $manager = new clientManager($cnx);
-        $client = $manager->ReadClient(1);
-        echo $client->getNom();
-        echo '<br>';
-        echo $client->getPrenom();
-        echo '<br>';
-        echo $client->getAge(); 
-        echo '<br>';
-        echo $client->getClientId(); 
-        echo '<br>';
+    
+    $_POST['clientID'] = 3;
 
-        $clients = $manager->ReadAllClient();
-        foreach($clients as $client) {
-            echo $client->getNom();
-            echo '<br>';
-            echo $client->getPrenom();
-            echo '<br>';
-            echo $client->getAge();
-            echo '<br>';
-            echo '<br>';
+    $supprimerClient = new client();
+    $supprimerClient->setClientID($_POST['clientID']);
 
-        }
+    $manager = new clientManager($cnx);
+    $manager->DeleteClient($supprimerClient);
+
+
+
+
+
+
+
+
+/***********update */
+ //   $_POST['nom'] ='Durey';
+ //   $_POST['prenom'] ='Julie';
+ //   $_POST['age'] = 150;
+ //   $_POST['clientID'] = 3;
+
+  //  $modifClient = new client();
+   // $modifClient->setNom($_POST['nom']);
+ //   $modifClient->setClientID($_POST['clientID']);
+//    $modifClient->setPrenom($_POST['prenom']);
+  //  $modifClient->setAge($_POST['age']);
+
+
+
+
+  //  $manager = new clientManager($cnx);
+  //  $manager->updateClient($modifClient);
+
+
+/********** create*/
+
+   // $_POST['nom'] ='Durey';
+   // $_POST['prenom'] ='Julie';
+   // $_POST['age'] = 150;
+
+
+    //$nveauClient = new client();
+   // $nveauClient->setNom($_POST['nom']);
+   // $nveauClient->setPrenom($_POST['prenom']);
+   // $nveauClient->setAge($_POST['age']);
+
+
+
+
+       // $manager = new clientManager($cnx);
+      //  $manager->CreateClient($nveauClient);
+
+
+/********* read*/
+
+
+
+       // $client = $manager->ReadClient(1);
+       // echo $client->getNom();
+        //echo '<br>';
+       // echo $client->getPrenom();
+       // echo '<br>';
+       // echo $client->getAge(); 
+       // echo '<br>';
+       // echo $client->getClientId(); 
+       // echo '<br>';
+
+
+/***** read all*/
+
+
+       // $clients = $manager->ReadAllClient();
+      //  foreach($clients as $client) {
+        //    echo $client->getNom();
+        //    echo '<br>';
+        //    echo $client->getPrenom();
+        //    echo '<br>';
+         //   echo $client->getAge();
+          //  echo '<br>';
+          //  echo '<br>';
+
+       // }
 
 
     ?>
