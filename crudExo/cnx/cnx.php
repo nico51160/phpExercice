@@ -6,6 +6,6 @@ $pass = '';
 
 try{
     $cnx = new PDO($dsn, $user, $pass);
-} catch(PDO::Exception $e) {
+} catch(PDOException $e) {
     echo 'Une erreur est survenue';
 }
