@@ -1,5 +1,5 @@
 <?php
-include('../traits/Manager.php');
+include('traits/Manager.php');
 class ClientManager {
     use Manager;
     
@@ -54,9 +54,11 @@ class ClientManager {
                     $client->$setter($valeur); 
                 }
             }
+            $clients[] = $client;
         }
-        $clients[] = $client;
-        return $clients;
+        if(!empty($client)) {
+            return $clients;
+        }
     }
     //**Afficher la liste des Clients */
 

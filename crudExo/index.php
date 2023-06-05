@@ -18,9 +18,20 @@ spl_autoload_register( function($class){
     <div class="client">
         <h2>Acceuil</h2>
         <p><a href="creer-client.php">Creer un nouveau client</a></p>
-    </div>
-    <?php
-        $manager = new ClientManager($cnx);
-    ?>
+        <h2>liste des clients</h2>
+        <ul>
+        <?php
+            $manager = new ClientManager($cnx);
+            $clients = $manager->ReadAllClient();
+            if(empty($clients)) {
+                echo '<li>Il n\'y a pas de client</li>';
+            } else {
+                foreach($clients as $client) {
+                    echo '<li>'. $client->getPrenom().''.$client->getNom().''
+                    .$client->getEmail().'</li>';
+            }
+            }
+        ?>
+        </ul>
 </body>
 </html>
